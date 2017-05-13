@@ -6,8 +6,8 @@ package com.example.android.projectfive_reportcard;
 
 // new Class
 public class ReportCard {
-    private String studentName;
-    private String studentResidence;
+    private String initialStudentName;
+    private String initialStudentResidence;
     private int studentYearOfBorn;
     private int chemistryGradeNumber;
     private int geologyGradeNumber;
@@ -19,8 +19,6 @@ public class ReportCard {
     //Constructor
     public ReportCard(int studentYearOfBorn, int chemistryGradeNumber, int geologyGradeNumber, int czechGradeNumber, int hydroGradeNumber, int numberOfGradeNumber, int averageGradeNumber) {
 
-        this.studentName = "Aaaaa Bbbb";
-        this.studentResidence = "New New York";
         this.studentYearOfBorn = studentYearOfBorn;
         this.chemistryGradeNumber = chemistryGradeNumber;
         this.geologyGradeNumber = geologyGradeNumber;
@@ -30,12 +28,12 @@ public class ReportCard {
         this.averageGradeNumber = averageGradeNumber;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public String getInitialStudentName() {
+        return initialStudentName;
     }
 
-    public String getStudentResidence() {
-        return studentResidence;
+    public String getInitialStudentResidence() {
+        return initialStudentResidence;
     }
 
     public int getStudentYearOfBorn() {
@@ -65,12 +63,21 @@ public class ReportCard {
         averageGradeNumber = (chemistryGradeNumber+geologyGradeNumber+czechGradeNumber+hydroGradeNumber)/numberOfGradeNumber;
         return averageGradeNumber;
     }
+
+    //Setters
+    public void setStudentName(String studentName){
+        initialStudentName = studentName;
+    }
+    public void setStudentResidence(String studentResidence){
+        initialStudentResidence = studentResidence;
+    }
+
     //toString - print information from report card
     @Override
     public String toString() {
         return "{\"Summary\":{" +
-                "\"studentName\":" + "\"" + studentName + "\"," +
-                "\"studentResidence\":" + "\"" + studentResidence + "\"," +
+                "\"studentName\":" + "\"" + initialStudentName + "\"," +
+                "\"studentResidence\":" + "\"" + initialStudentResidence + "\"," +
                 "\"studentYearOfBorn\":" + studentYearOfBorn + "," +
                 "\"chemistryGradeNumber\":" + chemistryGradeNumber + "," +
                 "\"geologyGradeNumber\":" + geologyGradeNumber + "," +
